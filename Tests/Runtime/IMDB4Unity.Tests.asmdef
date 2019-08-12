@@ -1,0 +1,15 @@
+{
+    "name": "IMDB4Unity.Test",
+    "references": [
+        "IMDB4Unity",
+        "UnityExtensions"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

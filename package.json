@@ -1,0 +1,14 @@
+{
+    "name": "com.hidenami-i.imdb4unity",
+    "displayName": "IMDB4Unity",
+    "description": "in memory database for unity",
+    "version": "1.0.0",
+    "unity": "2018.1",
+    "license": "MIT",
+    "author": "Shuhei Iwamoto",
+    "src": "",
+    "repository": {},
+    "dependencies": {
+        "com.hidenami-i.unityextensions": "https://github.com/hidenami-i/UnityExtensions.git"
+    }
+}
