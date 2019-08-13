@@ -20,6 +20,7 @@ MasterCharacterRepository.Instance.LogAllEntity();
 ```
 
 ### Classes
+#### Entity
 ```csharp:MasterCharacterEntity.cs
 using UnityEngine;
 using System;
@@ -83,6 +84,7 @@ namespace IMDB4Unity.Tests
 }
 ```
 
+#### Repository
 ```csharp:MasterCharacterRepository.cs
 using System;
 using System.Collections.Generic;
