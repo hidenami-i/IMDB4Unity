@@ -3,7 +3,7 @@ In Memory Database for Unity
 
 # Usage
 ## Install
-Add the following line on manifest.json file.
+Add the following line on Packages/manifest.json file.
 ```json
 "com.hidenami-i.imdb4unity": "https://github.com/hidenami-i/IMDB4Unity.git",
 "com.hidenami-i.unityextensions": "https://github.com/hidenami-i/UnityExtensions.git",
