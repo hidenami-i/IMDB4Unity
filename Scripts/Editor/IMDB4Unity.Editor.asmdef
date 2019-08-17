@@ -3,7 +3,8 @@
     "references": [
         "IMDB4Unity",
         "UnityExtensions",
-        "UnityExtensions.Editor"
+        "UnityExtensions.Editor",
+        "Repository4Unity"
     ],
     "includePlatforms": [
         "Editor"

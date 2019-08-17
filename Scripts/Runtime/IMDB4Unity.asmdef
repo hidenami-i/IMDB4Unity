@@ -1,7 +1,8 @@
 {
     "name": "IMDB4Unity",
     "references": [
-        "UnityExtensions"
+        "UnityExtensions",
+        "Repository4Unity"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

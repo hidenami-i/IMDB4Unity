@@ -137,6 +137,7 @@ namespace IMDB4Unity
 				ExDebug.LogWarning($"File path is null or empty. Database name is {database.KName}");
 				return;
 			}
+
 			database.FromJson(ExIO.ReadAllText(filePath));
 		}
 

@@ -20,7 +20,7 @@ namespace IMDB4Unity
 				#if UNITY_EDITOR
 				return "SaveData";
 				#else
-				return Encrypt.MD5ToString("SaveData");
+				return UnityExtensions.Encrypt.MD5ToString("SaveData");
 				#endif
 			}
 		}

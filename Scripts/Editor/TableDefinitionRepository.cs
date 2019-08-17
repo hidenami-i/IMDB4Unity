@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using Repository4Unity;
 using UnityEngine;
 
 namespace IMDB4Unity.Editor
@@ -13,9 +14,6 @@ namespace IMDB4Unity.Editor
 
 		protected override List<TableDefinitionEntity> EntityList => tableDefinition;
 		
-		// Not schema
-		public override string Schema => "";
-
 		public List<TableDefinitionEntity> FindAllMaster() {
 			return FindAllBy(x => x.SchemaType.IsMaster());
 		}

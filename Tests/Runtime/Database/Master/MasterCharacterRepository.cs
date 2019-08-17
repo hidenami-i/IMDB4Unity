@@ -5,7 +5,7 @@ using UnityEngine;
 namespace IMDB4Unity.Tests
 {
 	[Serializable]
-	public sealed partial class MasterCharacterRepository : RepositoryBase<MasterCharacterEntity, MasterCharacterRepository>
+	public sealed partial class MasterCharacterRepository : DatabaseRepositoryBase<MasterCharacterEntity, MasterCharacterRepository>
 	{
 		[SerializeField] private List<MasterCharacterEntity> masterCharacter = new List<MasterCharacterEntity>();
 		protected override List<MasterCharacterEntity> EntityList => masterCharacter;

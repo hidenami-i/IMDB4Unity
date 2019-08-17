@@ -10,7 +10,8 @@ namespace IMDB4Unity.Tests
 			MasterCharacterEntity knight = new MasterCharacterEntity(1, "Knight", "Knight Desc", CharacterType.Knight, DateTime.Now);
 			MasterCharacterEntity magician = new MasterCharacterEntity(1, "Magician", "Magician Desc", CharacterType.Magician, DateTime.Now);
 			MasterCharacterEntity monster = new MasterCharacterEntity(1, "Monster", "Monster Desc", CharacterType.Monster, DateTime.Now);
-			MasterCharacterRepository.Instance.InsertAll(knight, magician, monster).Save();
+			MasterCharacterRepository.Instance.InsertAll(knight, magician, monster);
+			MasterCharacterRepository.Instance.Save();
 			MasterCharacterRepository.Instance.Load();
 			MasterCharacterRepository.Instance.LogAllEntity();
 		}

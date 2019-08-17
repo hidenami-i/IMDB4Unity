@@ -2,7 +2,8 @@
     "name": "IMDB4Unity.Test",
     "references": [
         "IMDB4Unity",
-        "UnityExtensions"
+        "UnityExtensions",
+        "Repository4Unity"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
