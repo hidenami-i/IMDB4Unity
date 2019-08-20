@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Text;
-using Repository4Unity;
+using DAO4Unity;
 
 namespace IMDB4Unity.Tests
 {

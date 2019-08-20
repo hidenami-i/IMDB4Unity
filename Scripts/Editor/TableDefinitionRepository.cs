@@ -2,7 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using Repository4Unity;
+using DAO4Unity;
 using UnityEngine;
 
 namespace IMDB4Unity.Editor

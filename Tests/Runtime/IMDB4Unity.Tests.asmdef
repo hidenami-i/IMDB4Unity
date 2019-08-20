@@ -3,7 +3,7 @@
     "references": [
         "IMDB4Unity",
         "UnityExtensions",
-        "Repository4Unity"
+        "DAO4Unity"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
