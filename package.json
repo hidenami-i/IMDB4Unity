@@ -10,6 +10,5 @@
     "repository": {},
     "dependencies": {
         "com.hidenami-i.unityextensions": "https://github.com/hidenami-i/UnityExtensions.git",
-        "com.hidenami-i.dao4unity": "https://github.com/hidenami-i/dao4unity.git"
     }
 }

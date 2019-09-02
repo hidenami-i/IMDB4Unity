@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System;
 using System.Text;
-using DAO4Unity;
 
 namespace IMDB4Unity.Tests
 {
 	[Serializable]
-	public class MasterCharacterEntity : EntityBase
+	internal sealed class MasterCharacterEntity : EntityBase
 	{
 		[SerializeField] private int id;
 		[SerializeField] private string name;

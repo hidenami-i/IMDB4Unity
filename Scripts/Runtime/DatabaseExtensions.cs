@@ -4,7 +4,7 @@ using UnityExtensions;
 
 namespace IMDB4Unity
 {
-	public static class DBUtils
+	public static class DatabaseExtensions
 	{
 		/// <summary>
 		/// file path cache.
@@ -35,7 +35,7 @@ namespace IMDB4Unity
 			#if UNITY_EDITOR
 
 			if (!filePathCache.TryGetValue(database.KName, out string filePath)) {
-				filePath = Path.Combine(DBSettings.Location.RootFolderPath, "../", DBSettings.Location.Name, database.Schema, database.KName + ".json");
+				filePath = Path.Combine(DatabaseSettings.Location.RootFolderPath, "../", DatabaseSettings.Location.Name, database.Schema, database.KName + ".json");
 				filePathCache.Add(database.KName, filePath);
 			}
 

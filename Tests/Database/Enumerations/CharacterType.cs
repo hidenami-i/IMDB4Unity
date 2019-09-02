@@ -2,14 +2,14 @@
 
 namespace IMDB4Unity.Tests
 {
-	public enum CharacterType
+	internal enum CharacterType
 	{
 		Knight = 1,
 		Magician = 2,
 		Monster = 3,
 	}
 
-	public class CharacterTypeCompare : IEqualityComparer<CharacterType>
+	internal class CharacterTypeCompare : IEqualityComparer<CharacterType>
 	{
 		public bool Equals(CharacterType x, CharacterType y) {
 			return x == y;
@@ -20,7 +20,7 @@ namespace IMDB4Unity.Tests
 		}
 	}
 
-	public static partial class CharacterTypeExtensions
+	internal static partial class CharacterTypeExtensions
 	{
 		/// <summary>
 		/// Returns true if the characterType is Knight.

@@ -1,6 +1,6 @@
 namespace IMDB4Unity
 {
-	public static class DBSettings
+	public static class DatabaseSettings
 	{
 		public static class Location
 		{

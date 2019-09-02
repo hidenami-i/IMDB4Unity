@@ -115,7 +115,7 @@ namespace IMDB4Unity.Editor
 
 				string json = JsonUtility.ToJson(repositoryInstance, true);
 				IDatabase database = repositoryInstance as IDatabase;
-				ExIO.WriteAllText(Path.Combine(Application.dataPath, "../", DBSettings.Location.Name, database.Schema, database.KName + ".json"), json);
+				ExIO.WriteAllText(Path.Combine(Application.dataPath, "../", DatabaseSettings.Location.Name, database.Schema, database.KName + ".json"), json);
 			}
 			catch (Exception e) {
 				Debug.LogError(e.ToString());

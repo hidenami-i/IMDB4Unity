@@ -11,12 +11,22 @@ Add the following line on Packages/manifest.json file.
 
 ## Basic 
 ```csharp
-MasterCharacterEntity knight = new MasterCharacterEntity(1, "Knight", "Knight Desc", CharacterType.Knight);
-MasterCharacterEntity magician = new MasterCharacterEntity(1, "Magician", "Magician Desc", CharacterType.Magician);
-MasterCharacterEntity monster = new MasterCharacterEntity(1, "Monster", "Monster Desc", CharacterType.Monster);
-MasterCharacterRepository.Instance.InsertAll(knight, magician, monster).Save();
+MasterCharacterEntity knight = new MasterCharacterEntity(1, "Knight", "Knight Desc", CharacterType.Knight, DateTime.Now);
+MasterCharacterEntity magician = new MasterCharacterEntity(1, "Magician", "Magician Desc", CharacterType.Magician, DateTime.Now);
+MasterCharacterEntity monster = new MasterCharacterEntity(1, "Monster", "Monster Desc", CharacterType.Monster, DateTime.Now);
+MasterCharacterRepository.Instance.InsertAll(knight, magician, monster);
+MasterCharacterRepository.Instance.Save();
 MasterCharacterRepository.Instance.Load();
 MasterCharacterRepository.Instance.LogAllEntity();
+			
+			
+UserEntity user = new UserEntity(1, "ABCDE");
+UserDataMapper.Instance.Update(user);
+UserDataMapper.Instance.Save();
+UserDataMapper.Instance.Load();
+if (UserDataMapper.Instance.TryGet(out user)) {
+	Debug.Log(user.ToString());
+}
 ```
 
 ### Classes

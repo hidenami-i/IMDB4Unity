@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace IMDB4Unity.Tests
 {
-	public class TestIMDB4Unity : MonoBehaviour
+	internal class TestIMDB4Unity : MonoBehaviour
 	{
 		// Start is called before the first frame update
 		void Start() {
@@ -14,6 +14,15 @@ namespace IMDB4Unity.Tests
 			MasterCharacterRepository.Instance.Save();
 			MasterCharacterRepository.Instance.Load();
 			MasterCharacterRepository.Instance.LogAllEntity();
+			
+			
+			UserEntity user = new UserEntity(1, "ABCDE");
+			UserDataMapper.Instance.Update(user);
+			UserDataMapper.Instance.Save();
+			UserDataMapper.Instance.Load();
+			if (UserDataMapper.Instance.TryGet(out user)) {
+				Debug.Log(user.ToString());
+			}
 		}
 
 		// Update is called once per frame

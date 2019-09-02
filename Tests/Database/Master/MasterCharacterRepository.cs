@@ -5,11 +5,11 @@ using UnityEngine;
 namespace IMDB4Unity.Tests
 {
 	[Serializable]
-	public sealed partial class MasterCharacterRepository : DBRepositoryBase<MasterCharacterEntity, MasterCharacterRepository>
+	internal sealed partial class MasterCharacterRepository : RepositoryBase<MasterCharacterEntity, MasterCharacterRepository>, IDatabase
 	{
 		[SerializeField] private List<MasterCharacterEntity> masterCharacter = new List<MasterCharacterEntity>();
 		protected override List<MasterCharacterEntity> EntityList => masterCharacter;
-		public override string Schema => "Master";
+		public string Schema => "Master";
 
 		public bool TryFindById(int id, out MasterCharacterEntity entity) {
 			return TryFindBy(x => x.Id == id, out entity);

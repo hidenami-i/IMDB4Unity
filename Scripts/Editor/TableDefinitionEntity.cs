@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DAO4Unity;
 using UnityEngine;
 
 namespace IMDB4Unity.Editor
@@ -183,7 +182,7 @@ namespace IMDB4Unity.Editor
 			stringBuilder.AppendLine("{");
 			stringBuilder.AppendLine(GetTableLogicalNameScript);
 			stringBuilder.Indent1().AppendLine("[Serializable]");
-			stringBuilder.Indent1().AppendLine($"public sealed partial class {GetClassName}Repository : RepositoryBase<{GetClassName}Entity, {GetClassName}Repository>");
+			stringBuilder.Indent1().AppendLine($"public sealed partial class {GetClassName}Repository : RepositoryBase<{GetClassName}Entity, {GetClassName}Repository>, IDatabase");
 			stringBuilder.Indent1().AppendLine("{");
 
 			stringBuilder.SetSummaryComment("This field is generated automatically, so it can not be edited.", 2);
@@ -200,7 +199,7 @@ namespace IMDB4Unity.Editor
 
 			stringBuilder.SetSummaryComment("This getter is generated automatically, so it can not be edited.", 2);
 			stringBuilder.AppendLine();
-			stringBuilder.Indent2().AppendLine($"public override string Schema => \"{schema}\";");
+			stringBuilder.Indent2().AppendLine($"public string Schema => \"{schema}\";");
 
 			stringBuilder.AppendLine();
 
@@ -253,7 +252,7 @@ namespace IMDB4Unity.Editor
 			stringBuilder.AppendLine("{");
 			stringBuilder.AppendLine(GetTableLogicalNameScript);
 			stringBuilder.Indent1().AppendLine("[Serializable]");
-			stringBuilder.Indent1().AppendLine($"public sealed partial class {GetClassName}DataMapper : DataMapperBase<{GetClassName}Entity, {GetClassName}DataMapper>");
+			stringBuilder.Indent1().AppendLine($"public sealed partial class {GetClassName}DataMapper : DataMapperBase<{GetClassName}Entity, {GetClassName}DataMapper>, IDatabase");
 			stringBuilder.Indent1().AppendLine("{");
 
 			stringBuilder.SetSummaryComment("This field is generated automatically, so it can not be edited.", 2);
