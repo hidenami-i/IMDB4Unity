@@ -5,11 +5,14 @@ namespace IMDB4Unity
 		public static class Location
 		{
 			private static string rootFolderPath;
-			private static string name;
+			private static string folderName;
 			
 			/// <summary>
 			/// Root folder path for save and load.
 			/// </summary>
+			/// <example>
+			/// Application.dataPath
+			/// </example>
 			public static string RootFolderPath {
 				get {
 
@@ -30,20 +33,20 @@ namespace IMDB4Unity
 			/// <summary>
 			/// Location folder name.
 			/// </summary>
-			public static string Name {
+			public static string FolderName {
 				get {
-					if (!string.IsNullOrEmpty(name)) {
-						return name;
+					if (!string.IsNullOrEmpty(folderName)) {
+						return folderName;
 					}
 					
 					// default
 					#if UNITY_EDITOR
-					return "DB";
+					return "Database";
 					#else
-					return UnityExtensions.Encrypt.MD5ToString("DB");
+					return UnityExtensions.Encrypt.MD5ToString("Database");
 					#endif
 				}
-				set { name = value; }
+				set { folderName = value; }
 			}
 		}
 	}

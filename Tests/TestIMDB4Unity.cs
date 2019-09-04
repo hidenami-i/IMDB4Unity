@@ -7,6 +7,11 @@ namespace IMDB4Unity.Tests
 	{
 		// Start is called before the first frame update
 		void Start() {
+
+
+			DatabaseSettings.Location.FolderName = "AppDatabase";
+			DatabaseSettings.Location.RootFolderPath = Application.dataPath;
+			
 			MasterCharacterEntity knight = new MasterCharacterEntity(1, "Knight", "Knight Desc", CharacterType.Knight, DateTime.Now);
 			MasterCharacterEntity magician = new MasterCharacterEntity(1, "Magician", "Magician Desc", CharacterType.Magician, DateTime.Now);
 			MasterCharacterEntity monster = new MasterCharacterEntity(1, "Monster", "Monster Desc", CharacterType.Monster, DateTime.Now);

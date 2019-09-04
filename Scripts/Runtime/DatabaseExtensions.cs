@@ -35,7 +35,7 @@ namespace IMDB4Unity
 			#if UNITY_EDITOR
 
 			if (!filePathCache.TryGetValue(database.KName, out string filePath)) {
-				filePath = Path.Combine(DatabaseSettings.Location.RootFolderPath, "../", DatabaseSettings.Location.Name, database.Schema, database.KName + ".json");
+				filePath = Path.Combine(DatabaseSettings.Location.RootFolderPath, "../", DatabaseSettings.Location.FolderName, database.Schema, database.KName + ".json");
 				filePathCache.Add(database.KName, filePath);
 			}
 

@@ -32,7 +32,7 @@ namespace IMDB4Unity
 				if (instance == null) {
 					instance = new KRepository();
 				}
-
+				
 				return instance;
 			}
 		}
