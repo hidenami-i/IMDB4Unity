@@ -41,7 +41,7 @@ namespace IMDB4Unity
 
 			#else
 			if (!filePathCache.TryGetValue(database.KName, out string filePath)) {
-				filePath = Path.Combine(DBSettings.Location.RootFolderPath, DBSettings.Location.Name, Encrypt.MD5ToString(database.Schema), Encrypt.MD5ToString(database.KName) + ".bytes");
+				filePath = Path.Combine(DatabaseSettings.Location.RootFolderPath, DatabaseSettings.Location.FolderName, Encrypt.MD5ToString(database.Schema), Encrypt.MD5ToString(database.KName) + ".bytes");
 				filePathCache.Add(database.KName, filePath);
 			}
 
