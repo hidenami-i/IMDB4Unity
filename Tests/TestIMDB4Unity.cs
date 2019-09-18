@@ -8,7 +8,6 @@ namespace IMDB4Unity.Tests
 		// Start is called before the first frame update
 		void Start() {
 
-
 			DatabaseSettings.Location.FolderName = "AppDatabase";
 			DatabaseSettings.Location.RootFolderPath = Application.dataPath;
 			
@@ -19,7 +18,6 @@ namespace IMDB4Unity.Tests
 			MasterCharacterRepository.Instance.Save();
 			MasterCharacterRepository.Instance.Load();
 			MasterCharacterRepository.Instance.LogAllEntity();
-			
 			
 			UserEntity user = new UserEntity(1, "ABCDE");
 			UserDataMapper.Instance.Update(user);

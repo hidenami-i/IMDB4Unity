@@ -47,7 +47,7 @@ namespace IMDB4Unity
 		/// </summary>
 		public string TName => typeof(TEntity).Name;
 
-		public virtual void FromJson(string json) {
+		public void FromJson(string json) {
 			if (string.IsNullOrEmpty(json)) {
 				return;
 			}
@@ -68,7 +68,7 @@ namespace IMDB4Unity
 			}
 		}
 
-		public virtual string ToJson(bool prettyPrint = false) {
+		public string ToJson(bool prettyPrint = false) {
 			return JsonUtility.ToJson(Instance, prettyPrint);
 		}
 
@@ -76,27 +76,27 @@ namespace IMDB4Unity
 			return PBKDF25.Encrypt(ToJson());
 		}
 
-		public virtual int Count() {
+		public int Count() {
 			return EntityList.SafeCount();
 		}
 
-		public virtual int CountBy(Predicate<TEntity> match) {
+		public int CountBy(Predicate<TEntity> match) {
 			return FindAllBy(match).SafeCount();
 		}
 
-		public virtual bool IsNullOrEmpty() {
+		public bool IsNullOrEmpty() {
 			return EntityList.IsNullOrEmpty();
 		}
 
-		public virtual bool IsNullOrEmptyBy(Predicate<TEntity> match) {
+		public bool IsNullOrEmptyBy(Predicate<TEntity> match) {
 			return FindAllBy(match).IsNullOrEmpty();
 		}
 
-		public virtual bool IsNotEmpty() {
+		public bool IsNotEmpty() {
 			return EntityList.IsNotEmpty();
 		}
 
-		public virtual bool IsNotEmptyBy(Predicate<TEntity> match) {
+		public bool IsNotEmptyBy(Predicate<TEntity> match) {
 			return FindAllBy(match).IsNotEmpty();
 		}
 
@@ -148,7 +148,7 @@ namespace IMDB4Unity
 			}
 		}
 
-		public virtual TEntity GetByOrDefault(Predicate<TEntity> match, TEntity defaultEntity) {
+		public TEntity GetByOrDefault(Predicate<TEntity> match, TEntity defaultEntity) {
 			TEntity result = defaultEntity;
 
 			if (TryFindBy(match, out TEntity entity)) {
@@ -158,7 +158,7 @@ namespace IMDB4Unity
 			return result;
 		}
 
-		public virtual TEntity GetByIndexOrDefault(int index, TEntity defaultEntity) {
+		public TEntity GetByIndexOrDefault(int index, TEntity defaultEntity) {
 			TEntity result = defaultEntity;
 
 			if (TryFindByIndex(index, out TEntity entity)) {
@@ -168,7 +168,7 @@ namespace IMDB4Unity
 			return result;
 		}
 
-		public virtual TEntity GetFirstOrDefault(int index, TEntity defaultEntity) {
+		public TEntity GetFirstOrDefault(int index, TEntity defaultEntity) {
 			TEntity result = defaultEntity;
 
 			if (TryGetFirst(out TEntity entity)) {
@@ -178,7 +178,7 @@ namespace IMDB4Unity
 			return result;
 		}
 
-		public virtual TEntity GetLastOrDefault(int index, TEntity defaultEntity) {
+		public TEntity GetLastOrDefault(int index, TEntity defaultEntity) {
 			TEntity result = defaultEntity;
 
 			if (TryGetLast(out TEntity entity)) {
@@ -188,12 +188,12 @@ namespace IMDB4Unity
 			return result;
 		}
 
-		public virtual bool TryFindBy(Predicate<TEntity> match, out TEntity entity) {
+		public bool TryFindBy(Predicate<TEntity> match, out TEntity entity) {
 			entity = EntityList.Find(match);
 			return entity != null;
 		}
 
-		public virtual bool TryFindByIndex(int index, out TEntity entity) {
+		public bool TryFindByIndex(int index, out TEntity entity) {
 			entity = null;
 
 			if (index < 0 || index > Count()) {
@@ -204,25 +204,25 @@ namespace IMDB4Unity
 			return entity != null;
 		}
 
-		public virtual bool TryGetFirst(out TEntity entity) {
+		public bool TryGetFirst(out TEntity entity) {
 			entity = null;
 			return TryFindByIndex(0, out entity);
 		}
 
-		public virtual bool TryGetLast(out TEntity entity) {
+		public bool TryGetLast(out TEntity entity) {
 			entity = null;
 			return TryFindByIndex(Count(), out entity);
 		}
 
-		public virtual List<TEntity> FindAll() {
+		public List<TEntity> FindAll() {
 			return EntityList;
 		}
 
-		public virtual List<TEntity> FindAllBy(Predicate<TEntity> match) {
+		public List<TEntity> FindAllBy(Predicate<TEntity> match) {
 			return EntityList.FindAll(match);
 		}
 
-		public virtual void DeleteBy(Predicate<TEntity> match) {
+		public void DeleteBy(Predicate<TEntity> match) {
 			if (TryFindBy(match, out TEntity e)) {
 				EntityList.Remove(e);
 				return;
@@ -231,14 +231,14 @@ namespace IMDB4Unity
 			ExDebug.LogWarning("Not found Entity");
 		}
 
-		public virtual void DeleteAll() {
+		public void DeleteAll() {
 			EntityList.SafeClear();
 		}
 
-		public virtual void DeleteAllBy(Predicate<TEntity> match) {
+		public void DeleteAllBy(Predicate<TEntity> match) {
 			var list = FindAllBy(match);
-			for (int i = 0; i < list.Count; i++) {
-				EntityList.Remove(list[i]);
+			foreach (var entity in list) {
+				EntityList.Remove(entity);
 			}
 		}
 

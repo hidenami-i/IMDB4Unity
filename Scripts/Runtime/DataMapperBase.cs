@@ -42,11 +42,11 @@ namespace IMDB4Unity
 		/// </summary>
 		public string TName => typeof(TEntity).Name;
 
-		public virtual void FromJson(string json) {
+		public void FromJson(string json) {
 			instance = JsonUtility.FromJson<KDataMapper>(json);
 		}
 
-		public virtual void Update(TEntity entity) {
+		public void Update(TEntity entity) {
 			Entity = entity;
 		}
 
@@ -54,16 +54,16 @@ namespace IMDB4Unity
 			return JsonUtility.ToJson(Instance, prettyPrint);
 		}
 
-		public virtual string GetContentsHash() {
+		public string GetContentsHash() {
 			return PBKDF25.Encrypt(ToJson());
 		}
 
-		public virtual bool TryGet(out TEntity entity) {
+		public bool TryGet(out TEntity entity) {
 			entity = Entity;
 			return entity != null;
 		}
 
-		public virtual TEntity GetOrDefault(TEntity defaultEntity) {
+		public TEntity GetOrDefault(TEntity defaultEntity) {
 			TEntity result = defaultEntity;
 
 			if (Entity != null) {
@@ -73,7 +73,7 @@ namespace IMDB4Unity
 			return result;
 		}
 
-		public virtual void Delete() {
+		public void Delete() {
 			Entity = null;
 		}
 	}
