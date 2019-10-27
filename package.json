@@ -9,6 +9,6 @@
     "src": "",
     "repository": {},
     "dependencies": {
-        "com.hidenami-i.unityextensions" : "#"
+        "com.hidenami-i.unityextensions" : "1.0.0"
     }
 }
