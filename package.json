@@ -7,8 +7,12 @@
     "license": "MIT",
     "author": "Shuhei Iwamoto",
     "src": "",
-    "repository": {},
-    "dependencies": {
-        "com.hidenami-i.unityextensions" : "1.0.0"
-    }
+    "category": "Unity",
+    "samples": [
+        {
+            "displayName": "Tests",
+            "description":"description",
+            "path": "Tests"
+        }
+    ]
 }
