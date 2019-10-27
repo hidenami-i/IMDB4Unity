@@ -6,13 +6,5 @@
     "unity": "2018.1",
     "license": "MIT",
     "author": "Shuhei Iwamoto",
-    "src": "",
     "category": "Unity",
-    "samples": [
-        {
-            "displayName": "Tests",
-            "description":"description",
-            "path": "Tests"
-        }
-    ]
 }
