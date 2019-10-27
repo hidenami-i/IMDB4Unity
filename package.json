@@ -8,5 +8,7 @@
     "author": "Shuhei Iwamoto",
     "src": "",
     "repository": {},
-    "dependencies": {}
+    "dependencies": {
+        "com.hidenami-i.unityextensions" : "#"
+    }
 }
